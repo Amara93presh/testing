@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100hv;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .signup-container{
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+            width: 300px;
+            margin-top: 10%;
+        }
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+        .form-group{
+            margin-bottom: 15px;
+        }
+
+        .form-group label{
+            margin-bottom: 15px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[ type="submit"]{
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+           
+        }
+
+        .error-message{
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" >
+            <div class="form-group">
+                <label for="Firstname">First Name:</label>
+               
+                <input type="text" id="firstname" name="First" required>
+                <div id="firstname-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="Lastname">Last Name:</label>
+                
+                <input type="lastname" id="lastname" name="lastname" required>
+                <div id="lastname-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                
+                <input type="text" id="username" name="username" required>
+                <div id="username-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                
+                <input type="email" id="email" name="email" required>
+                <div id="email-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                
+                <input type="password" id="password" name="password" required>
+                <div id="password-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign Up"  required>
+            </div>
+        </form>
+    </div>
+
+    https://lof8sc.yourbrand.studio/files/dynamicContent/sites/lof8sc/images/en/webpage_13/m5p6d1a5/element_252/rwdMode_1/2400x700/main.webp
+
+        <script>
+            document.getElementById("signup-form").addEventListener("submit", function(event)
+            { event.preventDefault()
+                let isValid = true; 
+           
+                // reset erroe message
+                document.getElementById("username-error").textContent = "";
+                document.getElementById("email-error").textContent = "";
+                document.getElementById("password-error").textContent = "";
+                // username validation (Example)
+                const username = document.getElementById("username").value;
+                if (username.length < 8) {
+                    document.getElementById(username-error).textContent = "username is less than 8 characters";
+                    isValid = false;
+                }
+            }
+            
+            
+             // email validation (Example)
+             const email = document.getElementById("email").value;
+             if (!/\^s+@\s+\.\s+\.test(email)) {
+                 document.getElementById("email-error").textContent = "Enter a valid email address";
+                 isValid = false;
+             };
+
+             // password validation (presh93)
+             const password = document.getElementById("password").value;
+             if (password.length < 6 )  {
+                 document.getElementById("password-error").textContent = "Password must be at least 6 characters";
+                 isValid = false;
+             }
+             if (!isValid) {
+                 event.preventDefault(); // prevent form submission if validation fails   
+             } else {
+                // Form is valid, you can proceed with submission or further processing.
+                 console.log("Form submitted successfully!");
+             
+
+             // fetch ('signup', {
+             //   method: 'POST',
+           // body: new FormData(this)
+            // })
+            //.then(response => response.json())
+            //.then(data => console.log(data))
+            }
+       
+        </script>
+       
+  
+
+
+
+
+  </div>  
+</body>
+</html>
